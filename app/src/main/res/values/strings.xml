@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Contacts R Us</string>
+    <string name="addButton">Add Contact</string>
+    <string name="deleteButton">Delete Contact</string>
+    <string name="showAllButton">Show All Contacts</string>
+    <string name="delete_alldeleteAllButton">Delete All Contacts</string>
+    <string name="broadcastButton">Send Broadcast</string>
+</resources>

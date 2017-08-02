@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aubuchon.contactsrus.MainActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <EditText
+            style="@style/MyTextView.EditText"
+            android:id="@+id/firstNameET"
+            android:hint="First Name">
+
+            <requestFocus/>
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <EditText
+            style="@style/MyTextView.EditText"
+            android:id="@+id/phoneNumberET"
+            android:hint="Phone Number">
+
+            <requestFocus/>
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <EditText
+            style="@style/MyTextView.EditText"
+            android:id="@+id/addressET"
+            android:hint="Address">
+
+            <requestFocus/>
+        </EditText>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <EditText
+                android:id="@+id/companyET"
+                style="@style/MyTextView.EditText"
+                android:hint="Company">
+
+                <requestFocus />
+            </EditText>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_lasttname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <EditText
+                    android:id="@+id/lastNameET"
+                    style="@style/MyTextView.EditText"
+                    android:hint="Last Name">
+
+                    <requestFocus />
+                </EditText>
+            </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        style="@style/MyTextView.Button"
+        android:text="@string/addButton"
+        android:id="@+id/addButton"
+        android:onClick="addClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        style="@style/MyTextView.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteClick"
+        android:text="@string/deleteButton" />
+
+    <Button
+        style="@style/MyTextView.Button"
+        android:text="@string/showAllButton"
+        android:id="@+id/showAllButton"
+        android:onClick="showAllClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        style="@style/MyTextView.Button"
+        android:text="@string/delete_alldeleteAllButton"
+        android:id="@+id/deleteAllButton"
+        android:onClick="deleteAllClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        style="@style/MyTextView.Button"
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendOutBroadcast"
+        android:text="@string/broadcastButton" />
+
+</LinearLayout>
+
+    </ScrollView>
