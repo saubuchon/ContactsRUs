@@ -1,6 +1,9 @@
 package com.aubuchon.contactsrus;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    // build the object that is going to be the notification itself
+    NotificationCompat.Builder notification;
+    private static final int uniqueID = 45123;    // the notification has to be assigned a unique ID
 
     //define our widget variables
     private EditText firstnameET, lastnameET, addressET, phonenumberET, companyET;
@@ -21,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        notification = new NotificationCompat.Builder(this);
+        notification.setAutoCancel(true);
 
         dbHandler = new MyDBHandler(this);
 
@@ -55,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
         companyET.setText("");
         //request focus on the firstname
         firstnameET.requestFocus();
+
+        notification.setSmallIcon(R.mipmap.ic_launcher);
+        notification.setContentTitle("Contacts R Us");
+        notification.setContentText("Your contact has been added");
+        Intent i = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
+        notification.setContentIntent(pendingIntent);
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(uniqueID, notification.build());
     }
 
     //delete a contact

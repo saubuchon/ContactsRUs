@@ -16,7 +16,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
 
     //define database variables
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "contacts.db";
     public static final String TABLE_NAME = "contacts";
     public static final String  COLUMN_ID = "_id";
@@ -37,7 +37,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String query = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_FIRSTNAME + " TEXT NOT NULL, " + COLUMN_LASTNAME + " TEXT NOT NULL " +
+        String query = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_FIRSTNAME + " TEXT NOT NULL, " + COLUMN_LASTNAME + " TEXT NOT NULL, " +
                 COLUMN_ADDRESS + " TEXT NOT NULL, " + COLUMN_PHONENUMBER + " TEXT NOT NULL, " + COLUMN_COMPANY + " TEXT NOT NULL" + ");";
         db.execSQL(query);
 
@@ -100,11 +100,13 @@ public class MyDBHandler extends SQLiteOpenHelper {
     public Cursor readEntry(){
         String[] allColumns = new String[]{
                 COLUMN_ID, COLUMN_FIRSTNAME, COLUMN_LASTNAME, COLUMN_PHONENUMBER, COLUMN_ADDRESS, COLUMN_COMPANY};
+        open();
         Cursor c = database.query(TABLE_NAME, allColumns, null , null , null, null, null);
 
         if(c!= null){
             c.moveToFirst();
         }
+        close();
         return c;
     }
 }

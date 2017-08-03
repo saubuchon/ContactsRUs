@@ -32,6 +32,24 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_lasttname"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/lastNameET"
+            style="@style/MyTextView.EditText"
+            android:hint="Last Name">
+
+            <requestFocus />
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_phoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +64,24 @@
             android:hint="Phone Number">
 
             <requestFocus/>
+        </EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_company"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/companyET"
+            style="@style/MyTextView.EditText"
+            android:hint="Company">
+
+            <requestFocus />
         </EditText>
     </android.support.design.widget.TextInputLayout>
 
@@ -65,42 +101,6 @@
 
             <requestFocus/>
         </EditText>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_company"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <EditText
-                android:id="@+id/companyET"
-                style="@style/MyTextView.EditText"
-                android:hint="Company">
-
-                <requestFocus />
-            </EditText>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_lasttname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="0dp">
-
-                <EditText
-                    android:id="@+id/lastNameET"
-                    style="@style/MyTextView.EditText"
-                    android:hint="Last Name">
-
-                    <requestFocus />
-                </EditText>
-            </android.support.design.widget.TextInputLayout>
-        </android.support.design.widget.TextInputLayout>
     </android.support.design.widget.TextInputLayout>
 
     <Button
